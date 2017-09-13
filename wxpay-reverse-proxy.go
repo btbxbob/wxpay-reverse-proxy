@@ -96,6 +96,3 @@ func main() {
 		go p.Start()
 	}
 }
-
-func init() {
-}
