@@ -61,7 +61,7 @@ func main() {
 		logger.Warn("Failed to resolve local address: %s", err)
 		os.Exit(1)
 	}
-	raddr, err := net.ResolveTCPAddr("tcp", "api.mch.weixin.qq.com")
+	raddr, err := net.ResolveTCPAddr("tcp", "api.mch.weixin.qq.com:443")
 	if err != nil {
 		logger.Warn("Failed to resolve remote address: %s", err)
 		os.Exit(1)
