@@ -55,7 +55,7 @@ func main() {
 		Color:   true,
 	}
 
-	logger.Info("Proxying to api.mch.weixin.qq.com.")
+	logger.Info("Proxying to api.mch.weixin.qq.com:443.")
 	laddr, err := net.ResolveTCPAddr("tcp", config.ListenAddress)
 	if err != nil {
 		logger.Warn("Failed to resolve local address: %s", err)
@@ -93,6 +93,7 @@ func main() {
 			Color:       true,
 		}
 
+		logger.Info("Config done. Start proxy.")
 		go p.Start()
 	}
 }
