@@ -1,0 +1,7 @@
+{
+    "listenaddress":":9999",
+    "verbose": true,
+    "very_verbose": false,
+    "nagles": false,
+    "hex": true
+}
