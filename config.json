@@ -1,5 +1,5 @@
 {
-    "listenaddress":":9999",
+    "listen_address":":9999",
     "verbose": true,
     "very_verbose": false,
     "nagles": false,

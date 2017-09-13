@@ -72,18 +72,18 @@ func main() {
 		os.Exit(1)
 	}
 
+	logger.Info("Config done. Start proxy, listening: %s", config.ListenAddress)
 	for {
+
 		conn, err := listener.AcceptTCP()
 		if err != nil {
 			logger.Warn("Failed to accept connection '%s'", err)
 			continue
 		}
 		connid++
-
 		var p *proxy.Proxy
 
 		p = proxy.New(conn, laddr, raddr)
-
 		p.Nagles = config.Nagles
 		p.OutputHex = config.Hex
 		p.Log = proxy.ColorLogger{
@@ -93,7 +93,6 @@ func main() {
 			Color:       true,
 		}
 
-		logger.Info("Config done. Start proxy.")
 		go p.Start()
 	}
 }
